@@ -3,7 +3,7 @@ name: X Bot (30 Dakika)
 on:
   schedule:
     # Her 30 dakikada bir (UTC)
-    - cron: "*/30 * * * *"
+    - cron: "*/1 * * * *"
   # Elle çalıştırmak için "Run workflow" butonu da olsun
   workflow_dispatch:
 
