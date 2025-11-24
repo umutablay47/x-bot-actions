@@ -1,5 +1,4 @@
 // index.js
-require("dotenv").config();
 const fetch = require("node-fetch"); // v2
 
 // GitHub Secrets'ten gelecek değişkenler
