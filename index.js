@@ -1,6 +1,6 @@
 // index.js
 require("dotenv").config();
-const fetch = require("node-fetch");
+const fetch = require("node-fetch"); // v2
 
 // GitHub Secrets'ten gelecek değişkenler
 const CLIENT_ID = process.env.CLIENT_ID;
