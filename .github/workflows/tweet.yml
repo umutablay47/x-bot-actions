@@ -1,0 +1,31 @@
+name: X Bot (30 Dakika)
+
+on:
+  schedule:
+    # Her 30 dakikada bir (UTC)
+    - cron: "*/30 * * * *"
+  # Elle çalıştırmak için "Run workflow" butonu da olsun
+  workflow_dispatch:
+
+jobs:
+  tweet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run bot
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+        run: node index.js
